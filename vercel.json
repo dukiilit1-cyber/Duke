@@ -1,0 +1,23 @@
+{
+  "regions": [
+    "gru1"
+  ],
+  "rewrites": [
+    {
+      "source": "/pp/:path*",
+      "destination": "/api/proxy?pp=:path*"
+    },
+    {
+      "source": "/proxy",
+      "destination": "/api/proxy"
+    }
+  ],
+  "functions": {
+    "api/proxy.mjs": {
+      "maxDuration": 60
+    },
+    "api/epg.mjs": {
+      "maxDuration": 60
+    }
+  }
+}
